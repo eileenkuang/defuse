@@ -15,5 +15,7 @@ public class GameFrame extends JFrame {
 		this.pack();// makes components fit in window
 		this.setVisible(true); // makes window visible to user
 		this.setLocationRelativeTo(null);// set window in middle of screen
+		
+		
 	}// end of GameFrame constructor
 }
