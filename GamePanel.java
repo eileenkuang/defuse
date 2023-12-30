@@ -8,7 +8,7 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-public class GamePanel extends JPanel implements Runnable, KeyListener {
+public class GamePanel extends JPanel implements Runnable, KeyListener, MouseListener, MouseMotionListener{
 
 	// dimensions of window
 	public static final int GAME_WIDTH = 1000;
@@ -30,12 +30,12 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	public LingMain ling;
 	
 	//other variables
-	public static boolean showMainMenu=true;
+	public static boolean showMainMenu=false;
 	public static boolean showBombMenu=false;
 	public static boolean showEndMenu=false;
 	public static boolean showCrypto=false;
 	public static boolean showRhythmic=false;
-	public static boolean showKey=false;
+	public static boolean showKey=true;
 	public static boolean showLing=false;
 	
 	public static boolean onlyShowMainMenu=showMainMenu && !showBombMenu && !showEndMenu && !showCrypto && !showRhythmic && !showKey && !showLing;
@@ -58,6 +58,8 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		// set up/start the game
 		this.setFocusable(true); // make everything in this class appear on the screen
 		this.addKeyListener(this); // start listening for keyboard input
+		this.addMouseListener(this);
+		this.addMouseMotionListener(this);
 		this.setPreferredSize(new Dimension(GAME_WIDTH, GAME_HEIGHT));
 		gameThread = new Thread(this);
 		gameThread.start();
@@ -238,6 +240,48 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 			ling.mouseExited(e);
 		}
 	}// end of mouseExited method
+	
+	public void mouseClicked(MouseEvent e) {
+		if(onlyShowMainMenu) {
+			mainMenu.mouseClicked(e);
+		}
+		else if(onlyShowBombMenu) {
+			bombMenu.mouseClicked(e);
+		}
+		else if(onlyShowEndMenu) {
+			endMenu.mouseClicked(e);
+		}
+		else if(onlyShowCrypto) {
+			crypto.mouseClicked(e);
+		}
+		else if(onlyShowRhythmic) {
+			rhythmic.mouseClicked(e);
+		}
+		else if(onlyShowKey) {
+			key.mouseClicked(e);
+		}
+		else if(onlyShowLing) {
+			ling.mouseClicked(e);
+		}
+	}//end of mouseClicked method
+	
+	public void mouseReleased(MouseEvent e) {
+		
+	}//end of mouseReleased method
+	
+	public void mousePressed(MouseEvent e) {
+		
+	}//end of mousePressed method
+	
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		key.mouseMoved(e);
+	}
 
 	public void loopMusic(String file) {
 		try {
@@ -297,5 +341,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 			}
 		}
 	}// end of run method
+
+
 
 }// end of GamePanel class
