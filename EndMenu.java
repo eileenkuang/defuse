@@ -38,4 +38,17 @@ public class EndMenu {
 	public void mouseExited(MouseEvent e) {
 
 	}// end of mouseExited method
+	
+	public void mouseClicked(MouseEvent e) {
+		
+	}//end of mouseClicked method
+	
+	public void mouseReleased(MouseEvent e) {
+		
+	}//end of mouseReleased method
+	
+	public void mousePressed(MouseEvent e) {
+		
+	}//end of mousePressed method
+
 }
