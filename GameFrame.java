@@ -1,9 +1,17 @@
+//Authors: Eileen Kuang & Lillian Li
+//Date: January 11, 2024
+//Title: 7 Minute Meltdown (GameFrame class)
+//Description: Run the game (The GameFrame class establishes the frame/window and runs the GamePanel constructor)
+
 import java.awt.*;
 import javax.swing.*;
 
 public class GameFrame extends JFrame {
-	GamePanel panel;
 
+	// GamePanel object
+	public GamePanel panel;
+
+	// Constructor
 	public GameFrame() {
 		panel = new GamePanel(); // run GamePanel constructor
 		this.add(panel);
