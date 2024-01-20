@@ -37,9 +37,12 @@ public class MagicMain {
 			backHoveredImage);
 	public boolean backHover = false;
 	
+	// counters and integers
 	public static int version;
 	public int count=0;
+	public static int used = 0;
 	
+	// booleans
 	public static boolean answer1bool = false;
 	public static boolean answer2bool = false;
 	public static boolean answer3bool = false;
@@ -76,7 +79,6 @@ public class MagicMain {
 		winIcon = new ImageIcon("magicwin.png");
 		winImage = winIcon.getImage();
 		fontFile = new File("HelpMe.ttf"); // font path
-		
 		hint = new HintButton();
 		submit = new GeneralButton(740, 460, 160, 70, submitImage, hoverImage);
 		
@@ -97,6 +99,8 @@ public class MagicMain {
 			answer[i] = 0;
 		}
 		version = (int)(Math.random()*4+1);
+		used = 0;
+		
 	}
 	
 	// draws all shapes and images to screen
@@ -785,7 +789,11 @@ public class MagicMain {
 			}
 			if(hint.intersects(e.getX(), e.getY(), 1, 1)) {
 				
-				hintUsed = true;
+				if(used == 0){
+					hintUsed = true;
+					CountTimer.penalty = true;
+					used++;
+				}
 				
 			}
 			

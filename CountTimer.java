@@ -143,7 +143,7 @@ public class CountTimer {
 			
 		}
 		
-		if(counter == 420) {
+		if(counter == 419) {
 			
 			EndMenu.win = false;
 			EndMenu.lose = true; // time ran out, user loses

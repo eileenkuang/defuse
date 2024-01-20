@@ -89,7 +89,7 @@ public class RhythmicMain {
 			
 			if(max<=5) {
 								
-				System.out.println("index: " + index + " + max: " + max);
+//				System.out.println("index: " + index + " + max: " + max);
 				
 				// if sequence should be playing and hasn't played all the indices yet
 				if(seqOrNot && index < max) {

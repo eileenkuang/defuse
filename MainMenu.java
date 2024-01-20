@@ -30,7 +30,7 @@ public class MainMenu {
 	public boolean showInstructions=false;
 	public boolean playMusic=false;
 	public boolean rulesMusic=false;
-	
+	public boolean backMusic=false;
 	
 	//instructions background
 	public ImageIcon instructionsIcon = new ImageIcon("instructions.png");
@@ -84,8 +84,14 @@ public class MainMenu {
 		else {
 			if(back.intersects(e.getX(), e.getY(), 1, 1)) {
 				backHover=true;
+				if(!backMusic) {
+					GamePanel.soundEffect(GamePanel.hover);
+					backMusic=true;
+				}
+				
 			}
 			else {
+				backMusic=false;
 				backHover=false;
 			}
 		}
