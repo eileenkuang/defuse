@@ -222,6 +222,7 @@ public class BombMenu {
 			CryptoMain.reset();
 			KeyMain.reset();
 			MagicMain.reset();
+			RhythmicMain.reset();
 			restart=false;
 		}
 		

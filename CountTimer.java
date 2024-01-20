@@ -145,6 +145,7 @@ public class CountTimer {
 		
 		if(counter == 419) {
 			
+			GamePanel.onlyShowEndMenu = true;
 			EndMenu.win = false;
 			EndMenu.lose = true; // time ran out, user loses
 			

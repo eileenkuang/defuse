@@ -41,7 +41,7 @@ public class RhythmicMain {
 			beginHover);
 
 	// checks
-	public boolean seqOrNot = true;
+	public static boolean seqOrNot = true;
 	public static boolean yflash = false;
 	public static boolean rflash = false;
 	public static boolean gflash = false;
@@ -49,15 +49,14 @@ public class RhythmicMain {
 	public static boolean hoverQuit = false;
 	public boolean backHover = false;
 	public boolean hoveringBegin = false;
-	public boolean beginBool = false;
+	public static boolean beginBool = false;
 	
 	// sequence variables
 	int[] sequence = new int[12];
 	int[] answerSeq = new int[12];
-	public static long lastTime;
 	public static int index = 0;
-	public int max = 1;
-	private int win = 0;
+	public static int max = 1;
+	private static int win = 0;
 
 	// constructor, set up location of all buttons
 	public RhythmicMain() {
@@ -84,7 +83,7 @@ public class RhythmicMain {
 		
         // if player presses begin the sequence
 		if(beginBool) {
-			
+						
 			begin.draw(g, hoveringBegin);
 			
 			if(max<=5) {
@@ -289,13 +288,22 @@ public class RhythmicMain {
 	    
 	}// end of draw method
 
+	public static void reset() {
+		
+		index = 0;
+		win = 0;
+		beginBool = false;
+		seqOrNot = true;
+		max = 1;
+		
+	}
 	// plays win sound once while draws the win screen
 	public void winSound() {
+				
+		if(win == 0)
+			GamePanel.soundEffect(GamePanel.right); //sound effect
 		
 		win++;
-		
-		if(win == 1)
-			GamePanel.soundEffect(GamePanel.right); //sound effect
 		
 	}
 	// sleeps program for a certain number of milliseconds
