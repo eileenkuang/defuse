@@ -143,9 +143,11 @@ public class CountTimer {
 			
 		}
 		
-		if(counter == 419) {
+		if(elapsedTime > 30) {
 			
 			GamePanel.onlyShowEndMenu = true;
+			GamePanel.onlyShowBombMenu = false;
+			GamePanel.soundEffect("gamelose.wav");
 			EndMenu.win = false;
 			EndMenu.lose = true; // time ran out, user loses
 			
