@@ -143,18 +143,19 @@ public class CountTimer {
 			
 		}
 		
-		if(elapsedTime > 30) {
+		if(elapsedTime > 420) { // time ran out, user loses
 			
 			GamePanel.onlyShowEndMenu = true;
 			GamePanel.onlyShowBombMenu = false;
 			GamePanel.soundEffect("gamelose.wav");
 			EndMenu.win = false;
-			EndMenu.lose = true; // time ran out, user loses
+			EndMenu.lose = true; 
 			
 		}
 		
 	}
 	
+	// reset timer whenever user begins game
 	public static void reset() {
 		
 		elapsedTime = 0; // start timer from 7 minutes

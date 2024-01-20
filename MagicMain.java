@@ -1074,6 +1074,14 @@ public class MagicMain {
 		if (count==4) {
 			
 			BombMenu.solveMagic = true;
+			GamePanel.soundEffect("right.wav");
+			count = 0;
+			
+		}
+		else {
+			
+			GamePanel.soundEffect("magicwrong.wav");
+			count = 0;
 			
 		}
 		
